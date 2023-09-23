@@ -80,7 +80,7 @@ pipeline {
                  withCredentials([usernamePassword(credentialsId: 'nexuscred', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]){
                  sh 'docker login http://65.0.104.33:8085/repository/flipkart-ms/ -u admin -p ${PASSWORD}'
                  echo "Push Docker Image to Nexus : In Progress"
-                 sh 'docker tag flipkart-ms:dev-flipkart-ms-v1.${BUILD_NUMBER}' 65.0.104.33:8085/flipkart-ms:dev-flipkart-ms-v1.${BUILD_NUMBER}'
+                 sh 'docker tag flipkart-ms:dev-flipkart-ms-v1.${BUILD_NUMBER} 65.0.104.33:8085/flipkart-ms:dev-flipkart-ms-v1.${BUILD_NUMBER}'
                  sh 'docker push 65.0.104.33:8085/flipkart-ms:dev-flipkart-ms-v1.${BUILD_NUMBER}'
                  echo "Push Docker Image to Nexus : Completed"
                  }
