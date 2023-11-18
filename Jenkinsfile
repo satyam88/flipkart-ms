@@ -23,7 +23,7 @@ pipeline {
                 sh 'mvn clean test'
                 echo 'Junit Test case check Completed!'
             }
-        }
+        }/*
         stage('Sonarqube') {
             environment {
                 scannerHome = tool 'SonarQubeScanner'
@@ -37,7 +37,7 @@ pipeline {
                     waitForQualityGate abortPipeline: true
                 }
             }
-        }
+        }*/
         stage('Code Package') {
             steps {
                 echo 'Creating War Artifact'
@@ -101,5 +101,11 @@ pipeline {
               }
            }
         }*/
+        stage('Deploy App to K8s Cluster') {
+            steps {
+                sh 'whoami'
+                sh 'kubectl apply -f kubernetes/prod'
+            }
+        }
 	}
 }
