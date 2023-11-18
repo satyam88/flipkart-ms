@@ -25,7 +25,7 @@ spec:
     spec:
       containers:
         - name: flipkart-ms
-          image: 559220132560.dkr.ecr.ap-south-1.amazonaws.com/flipkart-ms:latest
+          image: 559220132560.dkr.ecr.ap-south-1.amazonaws.com/flipkart-ms:dev-flipkart-ms-v1.35
           resources:
             requests:
               memory: 50Mi
