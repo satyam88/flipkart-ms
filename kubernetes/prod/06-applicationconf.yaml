@@ -8,6 +8,4 @@ metadata:
     app: flipkart-ms
     layer: frontend
 data:
-  db-host: cluster-mysql.database
-  db-port: 3306
-  db-name: my-db
+  application.properties: |-
